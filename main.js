@@ -7,3 +7,7 @@ const app = express()
 const port = 3333
 
 const host = "http://127.0.0.1:"
+
+
+
+app.use(express.static("public"))
