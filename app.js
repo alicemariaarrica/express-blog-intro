@@ -37,7 +37,6 @@ app.get("/", (req, res) => {
 //3 e 4.Creiamo poi una rotta /posts che restituisca un oggetto json con la lista dei post e il conteggio, partendo da un array locale.
 app.get("/posts", index); //la rotta /posts richiama la funzione index per visualizzare i post (perchè c'è get) definita nel controller posts.js 
 
-// Avvia il server
-app.listen(port, () => {
+app.listen(port, () => { //serve a far partire il server (il mio pc)
   console.log(`Server avviato su http://localhost:${port}`);
 });
