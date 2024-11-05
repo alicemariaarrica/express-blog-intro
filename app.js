@@ -37,6 +37,10 @@ app.get("/", (req, res) => {
 //3 e 4.Creiamo poi una rotta /posts che restituisca un oggetto json con la lista dei post e il conteggio, partendo da un array locale.
 app.get("/posts", index); //la rotta /posts richiama la funzione index per visualizzare i post (perchè c'è get) definita nel controller posts.js 
 
+
+//5. Configuriamo gli asset statici sull’applicazione in modo che si possano visualizzare le immagini associate ad ogni post.
+app.use(express.static(path.join(__dirname, "public")));
+
 app.listen(port, () => { //serve a far partire il server (il mio pc)
   console.log(`Server avviato su http://localhost:${port}`);
 });
