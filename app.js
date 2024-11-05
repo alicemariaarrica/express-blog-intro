@@ -29,10 +29,12 @@ const port = 3333;
 //4. La rotta relativa ai post dovrà chiamare la funzione index() dal controller dedicato ( controllers/posts.js )
 const { index } = require("./controllers/posts"); //// Importa il controller per i post
 
+
 //1. Creiamo il progetto base con una rotta / che ritorna un h1 con scritto Benvenuto nel mio blog!
 app.get("/", (req, res) => {
   res.send("<h1>Benvenuto nel mio blog!</h1>");
 });
+
 
 //3 e 4.Creiamo poi una rotta /posts che restituisca un oggetto json con la lista dei post e il conteggio, partendo da un array locale.
 app.get("/posts", index); //la rotta /posts richiama la funzione index per visualizzare i post (perchè c'è get) definita nel controller posts.js 
@@ -40,6 +42,7 @@ app.get("/posts", index); //la rotta /posts richiama la funzione index per visua
 
 //5. Configuriamo gli asset statici sull’applicazione in modo che si possano visualizzare le immagini associate ad ogni post.
 app.use(express.static(path.join(__dirname, "public")));
+
 
 app.listen(port, () => { //serve a far partire il server (il mio pc)
   console.log(`Server avviato su http://localhost:${port}`);
